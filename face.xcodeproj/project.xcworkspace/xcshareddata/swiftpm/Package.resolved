@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CodableCSV",
+        "repositoryURL": "git@github.com:steveriggins/CodableCSV.git",
+        "state": {
+          "branch": null,
+          "revision": "44e82ca2c09c4c9e4b6b6c45a78c64216a7758ae",
+          "version": "0.3.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
