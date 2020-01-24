@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000F718523DAA35500F8D215 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 000F718423DAA35500F8D215 /* XMLParsing */; };
 		00CC109A23D80C5E00401151 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CC109923D80C5E00401151 /* main.swift */; };
 		00CC112823D82C9700401151 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 00CC112723D82C9700401151 /* CodableCSV */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CC112823D82C9700401151 /* CodableCSV in Frameworks */,
+				000F718523DAA35500F8D215 /* XMLParsing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +84,7 @@
 			name = face;
 			packageProductDependencies = (
 				00CC112723D82C9700401151 /* CodableCSV */,
+				000F718423DAA35500F8D215 /* XMLParsing */,
 			);
 			productName = face;
 			productReference = 00CC109623D80C5E00401151 /* face */;
@@ -113,6 +116,7 @@
 			mainGroup = 00CC108D23D80C5E00401151;
 			packageReferences = (
 				00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */,
+				000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */,
 			);
 			productRefGroup = 00CC109723D80C5E00401151 /* Products */;
 			projectDirPath = "";
@@ -294,6 +298,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ShawnMoore/XMLParsing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 		00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:steveriggins/CodableCSV.git";
@@ -305,6 +317,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		000F718423DAA35500F8D215 /* XMLParsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			productName = XMLParsing;
+		};
 		00CC112723D82C9700401151 /* CodableCSV */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */;

@@ -8,25 +8,52 @@
 
 import CodableCSV
 import Foundation
+import XMLParsing
+
+extension String {
+    public func dropExtension() -> String {
+        let root = String(self.reversed().drop(while: { character in
+            character != "."
+        }).reversed())
+        switch root.last {
+            case ".":
+            return String(root.dropLast())
+        default:
+            return String(root)
+        }
+    }
+}
+
+extension String {
+    public func csvToXMLDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        guard let date = dateFormatter.date(from: self) else { return "###ERROR###" }
+        dateFormatter.dateFormat = "yyyyMMdd000000.000"
+        let xmlDate = dateFormatter.string(from: date)
+        return xmlDate
+    }
+}
 
 struct Transaction: Codable {
     let date: String
     let description: String
     let merchant: String
     let category: String
+    let type: String
     var amount: String
 
     init(from decoder: Decoder) throws {
         var row = try decoder.unkeyedContainer()
         self.date = try row.decode(String.self)
-        let _ = try row.decode(String.self) // Clearing date column that I want to ignore
+        _ = try row.decode(String.self) // Clearing date column that I want to ignore
         self.description = try row.decode(String.self)
         self.merchant = try row.decode(String.self)
         self.category = try row.decode(String.self)
-        let _ = try row.decode(String.self) // Type column that I want to ignore
+        self.type = try row.decode(String.self)
         self.amount = try row.decode(String.self)
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var row = encoder.unkeyedContainer()
         try row.encode(self.date)
@@ -77,7 +104,8 @@ for transaction in transactions {
 
 /// Write it out
 
-let outputPath = inputPath + ".fixed.csv"
+let outputPath = String(inputPath.dropExtension() + "(fixed).csv")
+print(outputPath)
 let outputUrl = URL(fileURLWithPath: outputPath)
 let headers = ["Date", "Note", "Payee", "Category", "Amount"]
 
@@ -87,6 +115,69 @@ encoder.headers = headers
 do {
     let outputData = try encoder.encode(fixedTransactions)
     try outputData.write(to: outputUrl)
-} catch (let error) {
+} catch {
     print("Ooops! \(error)")
+}
+
+// XML
+
+struct STMTTRN: Codable {
+    let TRNTYPE: String
+    let DTPOSTED: String
+    let DTUSER: String
+    let TRNAMT: String
+    var NAME: String
+    
+    init(transaction: Transaction) {
+        self.DTPOSTED = transaction.date.csvToXMLDate()
+        self.DTUSER = transaction.date.csvToXMLDate()
+        self.NAME = transaction.merchant
+        self.TRNAMT = transaction.amount
+        self.TRNTYPE = transaction.type.lowercased() == "purchase" ? "DEBIT" : "CREDIT"
+    }
+}
+
+struct BANKTRANLIST: Codable {
+    let STMTTRN: [STMTTRN]
+}
+
+struct CCSTMTRS: Codable {
+    let BANKTRANLIST: BANKTRANLIST
+
+}
+
+struct CCSTMTTRNRS: Codable {
+    let CCSTMTRS: CCSTMTRS
+}
+
+struct CREDITCARDMSGSRSV1: Codable {
+    let CCSTMTTRNRS: CCSTMTTRNRS
+}
+
+struct OFX: Codable {
+    let CREDITCARDMSGSRSV1: CREDITCARDMSGSRSV1
+}
+
+
+let outputXMLPath = String(inputPath.dropExtension() + ".ofx")
+let outputXMLUrl = URL(fileURLWithPath: outputXMLPath)
+
+var xmlTransactions = [STMTTRN]()
+for transaction in fixedTransactions {
+    xmlTransactions.append(STMTTRN(transaction: transaction))
+}
+
+let ofx = OFX(CREDITCARDMSGSRSV1: CREDITCARDMSGSRSV1(CCSTMTTRNRS: CCSTMTTRNRS(CCSTMTRS: CCSTMTRS(BANKTRANLIST: BANKTRANLIST(STMTTRN: xmlTransactions)))))
+
+do {
+    let returnData = try XMLEncoder().encode(ofx, withRootKey: "OFX")
+    let stringData = """
+<?xml version="1.0" encoding="utf-8" ?>
+<?OFX OFXHEADER="200" VERSION="202" SECURITY="NONE" OLDFILEUID="NONE" NEWFILEUID="NONE"?>
+""" + String(data: returnData, encoding: .utf8)!
+    let xmlData = stringData.data(using: .utf8)!
+    try xmlData.write(to: outputXMLUrl)
+
+} catch {
+    print("XML Error: \(error)")
 }
