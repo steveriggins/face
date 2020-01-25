@@ -7,12 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000F718523DAA35500F8D215 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 000F718423DAA35500F8D215 /* XMLParsing */; };
+		00A1141D23DC24DF00E4F3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */; };
+		00A1141F23DC24DF00E4F3D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141E23DC24DF00E4F3D0 /* ContentView.swift */; };
+		00A1142123DC24E100E4F3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A1142023DC24E100E4F3D0 /* Assets.xcassets */; };
+		00A1142423DC24E100E4F3D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A1142323DC24E100E4F3D0 /* Preview Assets.xcassets */; };
+		00A1142723DC24E100E4F3D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A1142523DC24E100E4F3D0 /* Main.storyboard */; };
+		00A1145C23DD04D000E4F3D0 /* FaceLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */; };
+		00A1145D23DD04D000E4F3D0 /* FaceLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		00A1146223DD04DB00E4F3D0 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1142D23DCF3D500E4F3D0 /* Face.swift */; };
+		00A1146323DD04E000E4F3D0 /* AppleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1143123DCF43E00E4F3D0 /* AppleCard.swift */; };
+		00A1146423DD04E300E4F3D0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1142F23DCF41900E4F3D0 /* String+Extensions.swift */; };
+		00A1146523DD04E600E4F3D0 /* OFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1143323DCF51700E4F3D0 /* OFX.swift */; };
+		00A1146B23DD053C00E4F3D0 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 00A1146A23DD053C00E4F3D0 /* CodableCSV */; };
+		00A1146D23DD053C00E4F3D0 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 00A1146C23DD053C00E4F3D0 /* XMLParsing */; };
+		00A1147023DD055700E4F3D0 /* FaceLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */; };
+		00A1147123DD061D00E4F3D0 /* FaceLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A1145723DD04D000E4F3D0 /* FaceLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CC109A23D80C5E00401151 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CC109923D80C5E00401151 /* main.swift */; };
-		00CC112823D82C9700401151 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 00CC112723D82C9700401151 /* CodableCSV */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		00A1145A23DD04D000E4F3D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CC108E23D80C5E00401151 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00A1145423DD04D000E4F3D0;
+			remoteInfo = facelib;
+		};
+		00A1146E23DD055300E4F3D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CC108E23D80C5E00401151 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00A1145423DD04D000E4F3D0;
+			remoteInfo = facelib;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		00A1146123DD04D000E4F3D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				00A1145D23DD04D000E4F3D0 /* FaceLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00CC109423D80C5E00401151 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -25,28 +66,104 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00A1141A23DC24DF00E4F3D0 /* FaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00A1141E23DC24DF00E4F3D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00A1142023DC24E100E4F3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00A1142323DC24E100E4F3D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00A1142623DC24E100E4F3D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00A1142823DC24E100E4F3D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00A1142923DC24E100E4F3D0 /* FaceApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FaceApp.entitlements; sourceTree = "<group>"; };
+		00A1142D23DCF3D500E4F3D0 /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
+		00A1142F23DCF41900E4F3D0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		00A1143123DCF43E00E4F3D0 /* AppleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCard.swift; sourceTree = "<group>"; };
+		00A1143323DCF51700E4F3D0 /* OFX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFX.swift; sourceTree = "<group>"; };
+		00A1145523DD04D000E4F3D0 /* FaceLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FaceLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00A1145723DD04D000E4F3D0 /* FaceLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceLib.h; sourceTree = "<group>"; };
+		00A1145823DD04D000E4F3D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00CC109623D80C5E00401151 /* face */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = face; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CC109923D80C5E00401151 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00A1141723DC24DF00E4F3D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A1145C23DD04D000E4F3D0 /* FaceLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A1145223DD04D000E4F3D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A1146B23DD053C00E4F3D0 /* CodableCSV in Frameworks */,
+				00A1146D23DD053C00E4F3D0 /* XMLParsing in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00CC109323D80C5E00401151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CC112823D82C9700401151 /* CodableCSV in Frameworks */,
-				000F718523DAA35500F8D215 /* XMLParsing in Frameworks */,
+				00A1147023DD055700E4F3D0 /* FaceLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00A1141B23DC24DF00E4F3D0 /* FaceApp */ = {
+			isa = PBXGroup;
+			children = (
+				00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */,
+				00A1141E23DC24DF00E4F3D0 /* ContentView.swift */,
+				00A1142023DC24E100E4F3D0 /* Assets.xcassets */,
+				00A1142523DC24E100E4F3D0 /* Main.storyboard */,
+				00A1142823DC24E100E4F3D0 /* Info.plist */,
+				00A1142923DC24E100E4F3D0 /* FaceApp.entitlements */,
+				00A1142223DC24E100E4F3D0 /* Preview Content */,
+			);
+			path = FaceApp;
+			sourceTree = "<group>";
+		};
+		00A1142223DC24E100E4F3D0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				00A1142323DC24E100E4F3D0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		00A1144A23DD03DD00E4F3D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00A1145623DD04D000E4F3D0 /* FaceLib */ = {
+			isa = PBXGroup;
+			children = (
+				00A1142D23DCF3D500E4F3D0 /* Face.swift */,
+				00A1143123DCF43E00E4F3D0 /* AppleCard.swift */,
+				00A1142F23DCF41900E4F3D0 /* String+Extensions.swift */,
+				00A1143323DCF51700E4F3D0 /* OFX.swift */,
+				00A1145723DD04D000E4F3D0 /* FaceLib.h */,
+				00A1145823DD04D000E4F3D0 /* Info.plist */,
+			);
+			path = FaceLib;
+			sourceTree = "<group>";
+		};
 		00CC108D23D80C5E00401151 = {
 			isa = PBXGroup;
 			children = (
 				00CC109823D80C5E00401151 /* face */,
+				00A1141B23DC24DF00E4F3D0 /* FaceApp */,
+				00A1145623DD04D000E4F3D0 /* FaceLib */,
 				00CC109723D80C5E00401151 /* Products */,
+				00A1144A23DD03DD00E4F3D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				00CC109623D80C5E00401151 /* face */,
+				00A1141A23DC24DF00E4F3D0 /* FaceApp.app */,
+				00A1145523DD04D000E4F3D0 /* FaceLib.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,7 +187,61 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		00A1145023DD04D000E4F3D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A1147123DD061D00E4F3D0 /* FaceLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		00A1141923DC24DF00E4F3D0 /* FaceApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00A1142C23DC24E100E4F3D0 /* Build configuration list for PBXNativeTarget "FaceApp" */;
+			buildPhases = (
+				00A1141623DC24DF00E4F3D0 /* Sources */,
+				00A1141723DC24DF00E4F3D0 /* Frameworks */,
+				00A1141823DC24DF00E4F3D0 /* Resources */,
+				00A1146123DD04D000E4F3D0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00A1145B23DD04D000E4F3D0 /* PBXTargetDependency */,
+			);
+			name = FaceApp;
+			productName = FaceApp;
+			productReference = 00A1141A23DC24DF00E4F3D0 /* FaceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00A1145423DD04D000E4F3D0 /* FaceLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00A1145E23DD04D000E4F3D0 /* Build configuration list for PBXNativeTarget "FaceLib" */;
+			buildPhases = (
+				00A1145023DD04D000E4F3D0 /* Headers */,
+				00A1145123DD04D000E4F3D0 /* Sources */,
+				00A1145223DD04D000E4F3D0 /* Frameworks */,
+				00A1145323DD04D000E4F3D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00A1146723DD053600E4F3D0 /* PBXTargetDependency */,
+				00A1146923DD053600E4F3D0 /* PBXTargetDependency */,
+			);
+			name = FaceLib;
+			packageProductDependencies = (
+				00A1146A23DD053C00E4F3D0 /* CodableCSV */,
+				00A1146C23DD053C00E4F3D0 /* XMLParsing */,
+			);
+			productName = facelib;
+			productReference = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		00CC109523D80C5E00401151 /* face */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00CC109D23D80C5E00401151 /* Build configuration list for PBXNativeTarget "face" */;
@@ -80,11 +253,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				00A1146F23DD055300E4F3D0 /* PBXTargetDependency */,
 			);
 			name = face;
 			packageProductDependencies = (
-				00CC112723D82C9700401151 /* CodableCSV */,
-				000F718423DAA35500F8D215 /* XMLParsing */,
 			);
 			productName = face;
 			productReference = 00CC109623D80C5E00401151 /* face */;
@@ -100,6 +272,12 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Steven W. Riggins";
 				TargetAttributes = {
+					00A1141923DC24DF00E4F3D0 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					00A1145423DD04D000E4F3D0 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					00CC109523D80C5E00401151 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -123,11 +301,53 @@
 			projectRoot = "";
 			targets = (
 				00CC109523D80C5E00401151 /* face */,
+				00A1141923DC24DF00E4F3D0 /* FaceApp */,
+				00A1145423DD04D000E4F3D0 /* FaceLib */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		00A1141823DC24DF00E4F3D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A1142723DC24E100E4F3D0 /* Main.storyboard in Resources */,
+				00A1142423DC24E100E4F3D0 /* Preview Assets.xcassets in Resources */,
+				00A1142123DC24E100E4F3D0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A1145323DD04D000E4F3D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		00A1141623DC24DF00E4F3D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A1141F23DC24DF00E4F3D0 /* ContentView.swift in Sources */,
+				00A1141D23DC24DF00E4F3D0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A1145123DD04D000E4F3D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A1146323DD04E000E4F3D0 /* AppleCard.swift in Sources */,
+				00A1146523DD04E600E4F3D0 /* OFX.swift in Sources */,
+				00A1146423DD04E300E4F3D0 /* String+Extensions.swift in Sources */,
+				00A1146223DD04DB00E4F3D0 /* Face.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00CC109223D80C5E00401151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,7 +358,141 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		00A1145B23DD04D000E4F3D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00A1145423DD04D000E4F3D0 /* FaceLib */;
+			targetProxy = 00A1145A23DD04D000E4F3D0 /* PBXContainerItemProxy */;
+		};
+		00A1146723DD053600E4F3D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 00A1146623DD053600E4F3D0 /* CodableCSV */;
+		};
+		00A1146923DD053600E4F3D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 00A1146823DD053600E4F3D0 /* XMLParsing */;
+		};
+		00A1146F23DD055300E4F3D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00A1145423DD04D000E4F3D0 /* FaceLib */;
+			targetProxy = 00A1146E23DD055300E4F3D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00A1142523DC24E100E4F3D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00A1142623DC24E100E4F3D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		00A1142A23DC24E100E4F3D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FaceApp/FaceApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"FaceApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 869E762K34;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FaceApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.steveriggins.FaceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		00A1142B23DC24E100E4F3D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FaceApp/FaceApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"FaceApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 869E762K34;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FaceApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.steveriggins.FaceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		00A1145F23DD04D000E4F3D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 869E762K34;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FaceLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steveriggins.facelib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		00A1146023DD04D000E4F3D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 869E762K34;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FaceLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steveriggins.facelib;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		00CC109B23D80C5E00401151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -277,6 +631,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00A1142C23DC24E100E4F3D0 /* Build configuration list for PBXNativeTarget "FaceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00A1142A23DC24E100E4F3D0 /* Debug */,
+				00A1142B23DC24E100E4F3D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00A1145E23DD04D000E4F3D0 /* Build configuration list for PBXNativeTarget "FaceLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00A1145F23DD04D000E4F3D0 /* Debug */,
+				00A1146023DD04D000E4F3D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00CC109123D80C5E00401151 /* Build configuration list for PBXProject "face" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -317,15 +689,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		000F718423DAA35500F8D215 /* XMLParsing */ = {
+		00A1146623DD053600E4F3D0 /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
+		};
+		00A1146823DD053600E4F3D0 /* XMLParsing */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */;
 			productName = XMLParsing;
 		};
-		00CC112723D82C9700401151 /* CodableCSV */ = {
+		00A1146A23DD053C00E4F3D0 /* CodableCSV */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */;
 			productName = CodableCSV;
+		};
+		00A1146C23DD053C00E4F3D0 /* XMLParsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			productName = XMLParsing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
