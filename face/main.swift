@@ -113,7 +113,7 @@ do {
 
 // XML
 
-struct STMTTRN: Codable {
+struct StatementTransaction: Codable {
     let TRNTYPE: String
     let DTPOSTED: String
     let DTUSER: String
@@ -130,36 +130,56 @@ struct STMTTRN: Codable {
 }
 
 struct BANKTRANLIST: Codable {
-    let STMTTRN: [STMTTRN]
+    let value: [StatementTransaction]
+
+    enum CodingKeys: String, CodingKey {
+         case value = "STMTTRN"
+     }
 }
 
 struct CCSTMTRS: Codable {
-    let BANKTRANLIST: BANKTRANLIST
+    let value: BANKTRANLIST
+ 
+    enum CodingKeys: String, CodingKey {
+        case value = "BANKTRANLIST"
+    }
 
 }
 
 struct CCSTMTTRNRS: Codable {
-    let CCSTMTRS: CCSTMTRS
+    let value: CCSTMTRS
+
+    enum CodingKeys: String, CodingKey {
+        case value = "CCSTMTRS"
+    }
 }
 
 struct CREDITCARDMSGSRSV1: Codable {
-    let CCSTMTTRNRS: CCSTMTTRNRS
+    let value: CCSTMTTRNRS
+
+    enum CodingKeys: String, CodingKey {
+        case value = "CCSTMTTRNRS"
+    }
 }
 
 struct OFX: Codable {
-    let CREDITCARDMSGSRSV1: CREDITCARDMSGSRSV1
+    let value: CREDITCARDMSGSRSV1
+    
+    enum CodingKeys: String, CodingKey {
+        case value = "CREDITCARDMSGSRSV1"
+    }
 }
 
 
 let outputXMLPath = String(inputPath.deletingPathExtension() + ".ofx")
 let outputXMLUrl = URL(fileURLWithPath: outputXMLPath)
 
-var xmlTransactions = [STMTTRN]()
+var xmlTransactions = [StatementTransaction]()
 for transaction in fixedTransactions {
-    xmlTransactions.append(STMTTRN(transaction: transaction))
+    xmlTransactions.append(StatementTransaction(transaction: transaction))
 }
 
-let ofx = OFX(CREDITCARDMSGSRSV1: CREDITCARDMSGSRSV1(CCSTMTTRNRS: CCSTMTTRNRS(CCSTMTRS: CCSTMTRS(BANKTRANLIST: BANKTRANLIST(STMTTRN: xmlTransactions)))))
+let ofx = OFX(value: CREDITCARDMSGSRSV1(value: CCSTMTTRNRS(value: CCSTMTRS(value: BANKTRANLIST(value: xmlTransactions)))))
 
 do {
     let returnData = try XMLEncoder().encode(ofx, withRootKey: "OFX")
