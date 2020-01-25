@@ -11,16 +11,8 @@ import Foundation
 import XMLParsing
 
 extension String {
-    public func dropExtension() -> String {
-        let root = String(self.reversed().drop(while: { character in
-            character != "."
-        }).reversed())
-        switch root.last {
-            case ".":
-            return String(root.dropLast())
-        default:
-            return String(root)
-        }
+    public func deletingPathExtension() -> String {
+        return (self as NSString).deletingPathExtension
     }
 }
 
@@ -104,7 +96,7 @@ for transaction in transactions {
 
 /// Write it out
 
-let outputPath = String(inputPath.dropExtension() + "(fixed).csv")
+let outputPath = String(inputPath.deletingPathExtension() + "(fixed).csv")
 print(outputPath)
 let outputUrl = URL(fileURLWithPath: outputPath)
 let headers = ["Date", "Note", "Payee", "Category", "Amount"]
@@ -159,7 +151,7 @@ struct OFX: Codable {
 }
 
 
-let outputXMLPath = String(inputPath.dropExtension() + ".ofx")
+let outputXMLPath = String(inputPath.deletingPathExtension() + ".ofx")
 let outputXMLUrl = URL(fileURLWithPath: outputXMLPath)
 
 var xmlTransactions = [STMTTRN]()
@@ -174,6 +166,7 @@ do {
     let stringData = """
 <?xml version="1.0" encoding="utf-8" ?>
 <?OFX OFXHEADER="200" VERSION="202" SECURITY="NONE" OLDFILEUID="NONE" NEWFILEUID="NONE"?>
+
 """ + String(data: returnData, encoding: .utf8)!
     let xmlData = stringData.data(using: .utf8)!
     try xmlData.write(to: outputXMLUrl)
