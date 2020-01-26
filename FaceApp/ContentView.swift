@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import FaceLib
 
 struct ContentView: View, DropDelegate {
     var body: some View {
@@ -33,9 +34,7 @@ struct ContentView: View, DropDelegate {
 
         itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
             guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
-            print(url)
-            // Do something with the file url
-            // remember to dispatch on main in case of a @State change
+            Face().convertAppleCardToOFX(url)
         }
 
         return true

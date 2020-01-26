@@ -12,6 +12,8 @@ import XMLParsing
 
 public class Face {
     
+    var coordinator:NSFileCoordinator? = nil
+    
     public init() { }
 
     public func convertAppleCardToCSV(_ inputURL: URL) {
@@ -24,15 +26,35 @@ public class Face {
     }
     
     public func convertAppleCardToOFX(_ inputURL: URL) {
+        let filePresenter = FilePresenter()
+        
         let inputPath = inputURL.path
         let outputPath = String(inputPath.deletingPathExtension() + ".ofx")
         let outputURL = URL(fileURLWithPath: outputPath)
         
+        filePresenter.primaryPresentedItemURL = inputURL
+        filePresenter.presentedItemURL = outputURL
+        NSFileCoordinator.addFilePresenter(filePresenter)
+        
+        coordinator = NSFileCoordinator()
+        
         let transactions = importAppleCardTransactions(from: inputURL)
         exportOFX(transactions, outputURL: outputURL)
+        
+        NSFileCoordinator.removeFilePresenter(filePresenter)
+        
+        coordinator = nil
     }
 
     private func importAppleCardTransactions(from inputURL: URL) -> AppleCardTransactions {
+
+        coordinator?.coordinate(readingItemAt: inputURL, options: [], error: nil, byAccessor: { url in
+            // I really thinl they want all reading code to happen in here, or at least
+            // wait until this is called, but that breaks the design of having this
+            // api return a collection of objects
+            // it "works" for now, so move on and make this API block centric as well later
+        })
+
         guard let data = try? Data(contentsOf: inputURL) else {
             print("Could not create a file from: \(inputURL)")
             exit(1)
@@ -93,7 +115,10 @@ public class Face {
 
             """ + String(data: returnData, encoding: .utf8)!
             let xmlData = stringData.data(using: .utf8)!
-            try xmlData.write(to: outputURL)
+            
+            coordinator?.coordinate(writingItemAt: outputURL, options: [], error: nil, byAccessor: { url in
+                try? xmlData.write(to: outputURL)
+             })
 
         } catch {
             print("XML Error: \(error)")
