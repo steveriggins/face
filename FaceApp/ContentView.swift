@@ -6,18 +6,27 @@
 //  Copyright © 2020 Steven W. Riggins. All rights reserved.
 //
 
-import SwiftUI
 import FaceLib
+import SwiftUI
 
 struct ContentView: View, DropDelegate {
+    @State private var targetAcquired = false
+
     var body: some View {
-        Text("Drag Apple Card .csv files here")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onDrop(of: [kUTTypeFileURL as String], delegate: self)
+        ZStack {
+            Text("Drag Apple Card .csv files here")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .onDrop(of: [kUTTypeFileURL as String], delegate: self)
+            if self.targetAcquired {
+                Rectangle()
+                    .strokeBorder()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
     }
 
     func validateDrop(info: DropInfo) -> Bool {
-        guard let itemProvider = info.itemProviders(for: ["public.url-name"]).first else { return false }
+        guard let itemProvider = info.itemProviders(for: [kUTTypeFileURL as String]).first else { return false }
 
         print(info.hasItemsConforming(to: [kUTTypeCommaSeparatedText as String]))
         var isCSV = true
@@ -27,6 +36,14 @@ struct ContentView: View, DropDelegate {
         }
 
         return isCSV
+    }
+
+    func dropEntered(info: DropInfo) {
+        self.targetAcquired = true
+    }
+    
+    func dropExited(info: DropInfo) {
+        self.targetAcquired = false
     }
 
     func performDrop(info: DropInfo) -> Bool {
