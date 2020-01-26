@@ -17,7 +17,6 @@ public class FaceApplication: NSApplication {
             return
         }
 
-        delly.aboutState.aboutFace = !delly.aboutState.aboutFace
-        super.orderFrontStandardAboutPanel(options: optionsDictionary)
+        delly.aboutState.isAboutBoxShowing = !delly.aboutState.isAboutBoxShowing
     }
 }
