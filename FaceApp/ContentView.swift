@@ -41,7 +41,7 @@ struct ContentView: View, DropDelegate {
     func dropEntered(info: DropInfo) {
         self.targetAcquired = true
     }
-    
+
     func dropExited(info: DropInfo) {
         self.targetAcquired = false
     }
