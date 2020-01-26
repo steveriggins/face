@@ -22,8 +22,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the window and set the content view. 
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            styleMask: [.titled, .miniaturizable, .fullSizeContentView],
             backing: .buffered, defer: false)
+        window.title = "FACE, THE FINAL FRONTIER"
         window.center()
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)

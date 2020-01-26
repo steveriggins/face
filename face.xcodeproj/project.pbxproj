@@ -68,7 +68,7 @@
 
 /* Begin PBXFileReference section */
 		0023D20623DD116C00E45327 /* FilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePresenter.swift; sourceTree = "<group>"; };
-		00A1141A23DC24DF00E4F3D0 /* FaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00A1141A23DC24DF00E4F3D0 /* FACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A1141E23DC24DF00E4F3D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		00A1142023DC24E100E4F3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				00CC109623D80C5E00401151 /* face */,
-				00A1141A23DC24DF00E4F3D0 /* FaceApp.app */,
+				00A1141A23DC24DF00E4F3D0 /* FACE.app */,
 				00A1145523DD04D000E4F3D0 /* FaceLib.framework */,
 			);
 			name = Products;
@@ -218,7 +218,7 @@
 			);
 			name = FaceApp;
 			productName = FaceApp;
-			productReference = 00A1141A23DC24DF00E4F3D0 /* FaceApp.app */;
+			productReference = 00A1141A23DC24DF00E4F3D0 /* FACE.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00A1145423DD04D000E4F3D0 /* FaceLib */ = {
@@ -414,7 +414,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steveriggins.FaceApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FACE;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -438,7 +438,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steveriggins.FaceApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FACE;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
