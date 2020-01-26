@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0020B6F823DD6EB4002F5F68 /* AboutFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020B6F723DD6EB4002F5F68 /* AboutFace.swift */; };
 		0023D20723DD116C00E45327 /* FilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0023D20623DD116C00E45327 /* FilePresenter.swift */; };
 		00A1141D23DC24DF00E4F3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */; };
 		00A1141F23DC24DF00E4F3D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141E23DC24DF00E4F3D0 /* ContentView.swift */; };
@@ -24,6 +25,8 @@
 		00A1147023DD055700E4F3D0 /* FaceLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */; };
 		00A1147123DD061D00E4F3D0 /* FaceLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A1145723DD04D000E4F3D0 /* FaceLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CC109A23D80C5E00401151 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CC109923D80C5E00401151 /* main.swift */; };
+		00E1DB8D23DD65E2005C6EDA /* FaceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1DB8C23DD65E2005C6EDA /* FaceWindow.swift */; };
+		00E1DB8F23DD673D005C6EDA /* FaceApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1DB8E23DD673D005C6EDA /* FaceApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0020B6F723DD6EB4002F5F68 /* AboutFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutFace.swift; sourceTree = "<group>"; };
 		0023D20623DD116C00E45327 /* FilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePresenter.swift; sourceTree = "<group>"; };
 		00A1141A23DC24DF00E4F3D0 /* FACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		00A1145823DD04D000E4F3D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00CC109623D80C5E00401151 /* face */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = face; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CC109923D80C5E00401151 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		00E1DB8C23DD65E2005C6EDA /* FaceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceWindow.swift; sourceTree = "<group>"; };
+		00E1DB8E23DD673D005C6EDA /* FaceApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */,
+				0020B6F723DD6EB4002F5F68 /* AboutFace.swift */,
+				00E1DB8C23DD65E2005C6EDA /* FaceWindow.swift */,
+				00E1DB8E23DD673D005C6EDA /* FaceApplication.swift */,
 				00A1141E23DC24DF00E4F3D0 /* ContentView.swift */,
 				00A1142023DC24E100E4F3D0 /* Assets.xcassets */,
 				00A1142523DC24E100E4F3D0 /* Main.storyboard */,
@@ -335,8 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0020B6F823DD6EB4002F5F68 /* AboutFace.swift in Sources */,
 				00A1141F23DC24DF00E4F3D0 /* ContentView.swift in Sources */,
+				00E1DB8D23DD65E2005C6EDA /* FaceWindow.swift in Sources */,
 				00A1141D23DC24DF00E4F3D0 /* AppDelegate.swift in Sources */,
+				00E1DB8F23DD673D005C6EDA /* FaceApplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

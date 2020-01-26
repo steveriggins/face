@@ -11,18 +11,22 @@ import SwiftUI
 
 struct ContentView: View, DropDelegate {
     @State private var targetAcquired = false
+    @ObservedObject var aboutState: AboutState
 
     var body: some View {
         ZStack {
             Text("Drag Apple Card .csv files here")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .onDrop(of: [kUTTypeFileURL as String], delegate: self)
+
             if self.targetAcquired {
                 Rectangle()
                     .strokeBorder()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .rotation3DEffect(Angle(degrees: aboutState.aboutFace ? 180 : 0), axis: (x: 0, y: 1.0, z: 0))
+        .animation(.spring())
     }
 
     func validateDrop(info: DropInfo) -> Bool {
@@ -60,6 +64,6 @@ struct ContentView: View, DropDelegate {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(aboutState: AboutState())
     }
 }
