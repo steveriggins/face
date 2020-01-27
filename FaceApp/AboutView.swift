@@ -16,6 +16,7 @@ struct AboutView: View {
         VStack(alignment: .center) {
             Text("About FACE")
                 .font(.largeTitle)
+                .padding(.top, 15)
             Image("Avatar")
                 .resizable()
                 .frame(width: 128, height: 128, alignment: .center)
@@ -23,9 +24,12 @@ struct AboutView: View {
                 .padding(.bottom, 15)
             Text("FACE - Fix Apple Card Exports")
             Text("Copyright © 2020 Steven W. Riggins. All rights reserved.")
-                .onTapGesture {
-                    /// Here is one ctrl-i likes
+            Button(action: {
+                self.aboutState.isAboutBoxShowing = false
+            }) {
+                Text("Close")
             }
+            .padding(15)
         }
         .rotation3DEffect(Angle(degrees: aboutState.isEasterEggEnabled ? 180 : 0), axis: (x: 0, y: 1.0, z: 0))
         .animation(.spring())
