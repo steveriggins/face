@@ -14,11 +14,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             GeometryReader { proxy in
-                AboutView(aboutState: self.aboutState).transition(.asymmetric(insertion: .scale, removal: .opacity))
+                AboutView(aboutState: self.aboutState)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .offset(x: 0, y: self.aboutState.isAboutBoxShowing ? 0 : -proxy.size.height)
 
-                DropView().transition(.asymmetric(insertion: .scale, removal: .opacity))
+                DropView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .opacity(self.aboutState.isAboutBoxShowing ? 0 : 1.0)
             }
