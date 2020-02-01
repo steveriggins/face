@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the window and set the content view.
         window = FaceWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+            contentRect: NSRect(x: 0, y: 0, width: 480, height: 360),
             styleMask: [.titled, .miniaturizable, .fullSizeContentView],
             backing: .buffered, defer: false)
         window.title = "FACE, THE FINAL FRONTIER"

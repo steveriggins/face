@@ -14,16 +14,16 @@ struct DropView: View, DropDelegate {
 
     var body: some View {
         ZStack {
-            Text("Drag Apple Card .csv files here")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .onDrop(of: [kUTTypeFileURL as String], delegate: self)
-
+            VStack {
+                Text("Drag Apple Card .csv files here")
+            }
             if self.targetAcquired {
                 Rectangle()
                     .strokeBorder()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onDrop(of: [kUTTypeFileURL as String], delegate: self)
     }
 
     func validateDrop(info: DropInfo) -> Bool {

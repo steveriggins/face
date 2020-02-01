@@ -13,13 +13,16 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            if aboutState.isAboutBoxShowing {
-                AboutView(aboutState: aboutState)
-            } else {
-                DropView()
+            GeometryReader { proxy in
+                AboutView(aboutState: self.aboutState).transition(.asymmetric(insertion: .scale, removal: .opacity))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .offset(x: 0, y: self.aboutState.isAboutBoxShowing ? 0 : -proxy.size.height)
+
+                DropView().transition(.asymmetric(insertion: .scale, removal: .opacity))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .opacity(self.aboutState.isAboutBoxShowing ? 0 : 1.0)
             }
         }
-        .animation(.spring())
     }
 }
 

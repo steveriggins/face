@@ -8,6 +8,7 @@
 
 import Cocoa
 import Foundation
+import SwiftUI
 
 @objc(FaceApplication) @objcMembers
 public class FaceApplication: NSApplication {
@@ -17,6 +18,8 @@ public class FaceApplication: NSApplication {
             return
         }
 
-        delly.aboutState.isAboutBoxShowing = !delly.aboutState.isAboutBoxShowing
+        withAnimation {
+            delly.aboutState.isAboutBoxShowing = !delly.aboutState.isAboutBoxShowing
+        }
     }
 }
