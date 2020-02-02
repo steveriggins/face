@@ -52,7 +52,8 @@ struct DropView: View, DropDelegate {
 
         itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
             guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
-            Face().convertAppleCardToOFX(url)
+            Face().convertAppleCardToCSV(url)
+Face().convertAppleCardToOFX(url)
         }
 
         return true

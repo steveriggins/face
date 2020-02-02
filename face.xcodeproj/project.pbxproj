@@ -11,6 +11,7 @@
 		0020B6FA23DE0FEB002F5F68 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020B6F923DE0FEB002F5F68 /* DropView.swift */; };
 		0020B6FC23DE109A002F5F68 /* AboutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020B6FB23DE109A002F5F68 /* AboutState.swift */; };
 		0023D20723DD116C00E45327 /* FilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0023D20623DD116C00E45327 /* FilePresenter.swift */; };
+		00613D1623E63C9900851CEF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00613D1523E63C9900851CEF /* Transaction.swift */; };
 		00A1141D23DC24DF00E4F3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */; };
 		00A1141F23DC24DF00E4F3D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141E23DC24DF00E4F3D0 /* ContentView.swift */; };
 		00A1142123DC24E100E4F3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A1142023DC24E100E4F3D0 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		0020B6F923DE0FEB002F5F68 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		0020B6FB23DE109A002F5F68 /* AboutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutState.swift; sourceTree = "<group>"; };
 		0023D20623DD116C00E45327 /* FilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePresenter.swift; sourceTree = "<group>"; };
+		00613D1523E63C9900851CEF /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		00A1141A23DC24DF00E4F3D0 /* FACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A1141E23DC24DF00E4F3D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				00A1143123DCF43E00E4F3D0 /* AppleCard.swift */,
 				00A1142F23DCF41900E4F3D0 /* String+Extensions.swift */,
 				00A1143323DCF51700E4F3D0 /* OFX.swift */,
+				00613D1523E63C9900851CEF /* Transaction.swift */,
 				0023D20623DD116C00E45327 /* FilePresenter.swift */,
 				00A1145723DD04D000E4F3D0 /* FaceLib.h */,
 				00A1145823DD04D000E4F3D0 /* Info.plist */,
@@ -366,6 +369,7 @@
 			files = (
 				00A1146323DD04E000E4F3D0 /* AppleCard.swift in Sources */,
 				0023D20723DD116C00E45327 /* FilePresenter.swift in Sources */,
+				00613D1623E63C9900851CEF /* Transaction.swift in Sources */,
 				00A1146523DD04E600E4F3D0 /* OFX.swift in Sources */,
 				00A1146423DD04E300E4F3D0 /* String+Extensions.swift in Sources */,
 				00A1146223DD04DB00E4F3D0 /* Face.swift in Sources */,

@@ -8,37 +8,43 @@
 
 import Foundation
 
-struct StatementTransaction: Codable {
+typealias OFXTransactions = [OFXTransaction]
+
+struct OFXTransaction: Codable {
     let TRNTYPE: String
     let DTPOSTED: String
     let DTUSER: String
     let TRNAMT: String
     var NAME: String
-    
-    init(transaction: AppleCardTransaction) {
-        self.DTPOSTED = transaction.date.csvToXMLDate()
-        self.DTUSER = transaction.date.csvToXMLDate()
-        self.NAME = transaction.merchant
+
+    init(transaction: Transaction) {
+        self.DTPOSTED = transaction.datePosted
+        self.DTUSER = transaction.datePosted
+        self.NAME = transaction.payee
         self.TRNAMT = transaction.amount
-        self.TRNTYPE = transaction.type.lowercased() == "purchase" ? "DEBIT" : "CREDIT"
+        switch transaction.type {
+        case .payment:
+            self.TRNTYPE = "CREDIT"
+        case .purchase:
+            self.TRNTYPE = "DEBIT"
+        }
     }
 }
 
 struct BANKTRANLIST: Codable {
-    let value: [StatementTransaction]
+    let value: [OFXTransaction]
 
     enum CodingKeys: String, CodingKey {
-         case value = "STMTTRN"
-     }
+        case value = "STMTTRN"
+    }
 }
 
 struct CCSTMTRS: Codable {
     let value: BANKTRANLIST
- 
+
     enum CodingKeys: String, CodingKey {
         case value = "BANKTRANLIST"
     }
-
 }
 
 struct CCSTMTTRNRS: Codable {
@@ -59,7 +65,7 @@ struct CREDITCARDMSGSRSV1: Codable {
 
 struct OFX: Codable {
     let value: CREDITCARDMSGSRSV1
-    
+
     enum CodingKeys: String, CodingKey {
         case value = "CREDITCARDMSGSRSV1"
     }

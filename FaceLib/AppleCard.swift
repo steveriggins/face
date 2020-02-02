@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias AppleCardTransactions = [AppleCardTransaction]
+typealias AppleCardCSVWireModels = [AppleCardCSVWireModel]
 
-struct AppleCardTransaction: Codable {
+struct AppleCardCSVWireModel: Codable {
     let date: String
     let description: String
     let merchant: String
@@ -27,6 +27,20 @@ struct AppleCardTransaction: Codable {
         self.category = try row.decode(String.self)
         self.type = try row.decode(String.self)
         self.amount = try row.decode(String.self)
+    }
+    
+    init(transaction: Transaction) {
+        self.date = transaction.datePosted
+        self.description = transaction.description
+        self.merchant = transaction.payee
+        self.category = transaction.category
+        switch (transaction.type) {
+        case .payment:
+            self.type = "DEBIT"
+        case .purchase:
+            self.type = "PURCHASE"
+        }
+        self.amount = transaction.amount
     }
 
     func encode(to encoder: Encoder) throws {
