@@ -12,6 +12,8 @@
 		0020B6FC23DE109A002F5F68 /* AboutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020B6FB23DE109A002F5F68 /* AboutState.swift */; };
 		0023D20723DD116C00E45327 /* FilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0023D20623DD116C00E45327 /* FilePresenter.swift */; };
 		00613D1623E63C9900851CEF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00613D1523E63C9900851CEF /* Transaction.swift */; };
+		0072860823E90ECA00C4B91C /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 0072860723E90ECA00C4B91C /* XMLParsing */; };
+		0072860B23E90F2B00C4B91C /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 0072860A23E90F2B00C4B91C /* CodableCSV */; };
 		00A1141D23DC24DF00E4F3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141C23DC24DF00E4F3D0 /* AppDelegate.swift */; };
 		00A1141F23DC24DF00E4F3D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1141E23DC24DF00E4F3D0 /* ContentView.swift */; };
 		00A1142123DC24E100E4F3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A1142023DC24E100E4F3D0 /* Assets.xcassets */; };
@@ -23,8 +25,6 @@
 		00A1146323DD04E000E4F3D0 /* AppleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1143123DCF43E00E4F3D0 /* AppleCard.swift */; };
 		00A1146423DD04E300E4F3D0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1142F23DCF41900E4F3D0 /* String+Extensions.swift */; };
 		00A1146523DD04E600E4F3D0 /* OFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A1143323DCF51700E4F3D0 /* OFX.swift */; };
-		00A1146B23DD053C00E4F3D0 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 00A1146A23DD053C00E4F3D0 /* CodableCSV */; };
-		00A1146D23DD053C00E4F3D0 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 00A1146C23DD053C00E4F3D0 /* XMLParsing */; };
 		00A1147023DD055700E4F3D0 /* FaceLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */; };
 		00A1147123DD061D00E4F3D0 /* FaceLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A1145723DD04D000E4F3D0 /* FaceLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CC109A23D80C5E00401151 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CC109923D80C5E00401151 /* main.swift */; };
@@ -112,8 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00A1146B23DD053C00E4F3D0 /* CodableCSV in Frameworks */,
-				00A1146D23DD053C00E4F3D0 /* XMLParsing in Frameworks */,
+				0072860B23E90F2B00C4B91C /* CodableCSV in Frameworks */,
+				0072860823E90ECA00C4B91C /* XMLParsing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +251,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				00A1146723DD053600E4F3D0 /* PBXTargetDependency */,
-				00A1146923DD053600E4F3D0 /* PBXTargetDependency */,
+				002C878D23E90FAF008F9257 /* PBXTargetDependency */,
+				002C878B23E90FAB008F9257 /* PBXTargetDependency */,
 			);
 			name = FaceLib;
 			packageProductDependencies = (
-				00A1146A23DD053C00E4F3D0 /* CodableCSV */,
-				00A1146C23DD053C00E4F3D0 /* XMLParsing */,
+				0072860723E90ECA00C4B91C /* XMLParsing */,
+				0072860A23E90F2B00C4B91C /* CodableCSV */,
 			);
 			productName = facelib;
 			productReference = 00A1145523DD04D000E4F3D0 /* FaceLib.framework */;
@@ -314,8 +314,8 @@
 			);
 			mainGroup = 00CC108D23D80C5E00401151;
 			packageReferences = (
-				00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */,
-				000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */,
+				0072860623E90EC900C4B91C /* XCRemoteSwiftPackageReference "XMLParsing" */,
+				0072860923E90F2B00C4B91C /* XCRemoteSwiftPackageReference "CodableCSV" */,
 			);
 			productRefGroup = 00CC109723D80C5E00401151 /* Products */;
 			projectDirPath = "";
@@ -387,18 +387,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		002C878B23E90FAB008F9257 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 002C878A23E90FAB008F9257 /* XMLParsing */;
+		};
+		002C878D23E90FAF008F9257 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 002C878C23E90FAF008F9257 /* CodableCSV */;
+		};
 		00A1145B23DD04D000E4F3D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 00A1145423DD04D000E4F3D0 /* FaceLib */;
 			targetProxy = 00A1145A23DD04D000E4F3D0 /* PBXContainerItemProxy */;
-		};
-		00A1146723DD053600E4F3D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 00A1146623DD053600E4F3D0 /* CodableCSV */;
-		};
-		00A1146923DD053600E4F3D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 00A1146823DD053600E4F3D0 /* XMLParsing */;
 		};
 		00A1146F23DD055300E4F3D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -698,7 +698,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
+		0072860623E90EC900C4B91C /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ShawnMoore/XMLParsing.git";
 			requirement = {
@@ -706,36 +706,36 @@
 				minimumVersion = 0.0.3;
 			};
 		};
-		00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+		0072860923E90F2B00C4B91C /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:steveriggins/CodableCSV.git";
+			repositoryURL = "https://github.com/steveriggins/CodableCSV.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
+				minimumVersion = 0.3.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		00A1146623DD053600E4F3D0 /* CodableCSV */ = {
+		002C878A23E90FAB008F9257 /* XMLParsing */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */;
-			productName = CodableCSV;
-		};
-		00A1146823DD053600E4F3D0 /* XMLParsing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			package = 0072860623E90EC900C4B91C /* XCRemoteSwiftPackageReference "XMLParsing" */;
 			productName = XMLParsing;
 		};
-		00A1146A23DD053C00E4F3D0 /* CodableCSV */ = {
+		002C878C23E90FAF008F9257 /* CodableCSV */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 00CC112623D82C9700401151 /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			package = 0072860923E90F2B00C4B91C /* XCRemoteSwiftPackageReference "CodableCSV" */;
 			productName = CodableCSV;
 		};
-		00A1146C23DD053C00E4F3D0 /* XMLParsing */ = {
+		0072860723E90ECA00C4B91C /* XMLParsing */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 000F718323DAA35500F8D215 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			package = 0072860623E90EC900C4B91C /* XCRemoteSwiftPackageReference "XMLParsing" */;
 			productName = XMLParsing;
+		};
+		0072860A23E90F2B00C4B91C /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0072860923E90F2B00C4B91C /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

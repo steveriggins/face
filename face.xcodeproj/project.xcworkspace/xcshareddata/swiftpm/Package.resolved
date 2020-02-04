@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "CodableCSV",
-        "repositoryURL": "git@github.com:steveriggins/CodableCSV.git",
+        "repositoryURL": "https://github.com/steveriggins/CodableCSV.git",
         "state": {
           "branch": null,
-          "revision": "44e82ca2c09c4c9e4b6b6c45a78c64216a7758ae",
+          "revision": "874f840a55cb0739298eed5fed8dd6b4cc1a61f0",
           "version": "0.3.1"
         }
       },
