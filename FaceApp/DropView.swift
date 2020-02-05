@@ -22,29 +22,29 @@ struct DropView: View, DropDelegate {
                     .strokeBorder()
             }
         }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onDrop(of: [kUTTypeFileURL as String], delegate: self)
     }
 
     func validateDrop(info: DropInfo) -> Bool {
         guard let itemProvider = info.itemProviders(for: [kUTTypeFileURL as String]).first else { return false }
 
-        print(info.hasItemsConforming(to: [kUTTypeCommaSeparatedText as String]))
-        var isCSV = true
+        targetAcquired = false
+        
         itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
             guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
-            isCSV = url.pathExtension == "csv"
+            self.targetAcquired = url.pathExtension == "csv"
         }
 
-        return isCSV
-    }
-
-    func dropEntered(info: DropInfo) {
-        self.targetAcquired = true
+        return true
     }
 
     func dropExited(info: DropInfo) {
         self.targetAcquired = false
+    }
+
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        return DropProposal(operation: self.targetAcquired ? .copy : .cancel)
     }
 
     func performDrop(info: DropInfo) -> Bool {
@@ -52,8 +52,7 @@ struct DropView: View, DropDelegate {
 
         itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
             guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
-            Face().convertAppleCardToCSV(url)
-Face().convertAppleCardToOFX(url)
+            Face().convertAppleCardToOFX(url)
         }
 
         return true
