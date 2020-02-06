@@ -1,5 +1,5 @@
 //
-//  DropVIew.swift
+//  DropView.swift
 //  FaceApp
 //
 //  Created by Steven W. Riggins on 1/26/20.
@@ -59,7 +59,7 @@ struct DropView: View, DropDelegate {
     }
 }
 
-struct DropVIew_Previews: PreviewProvider {
+struct DropView_Previews: PreviewProvider {
     static var previews: some View {
         DropView()
     }
