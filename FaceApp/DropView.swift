@@ -11,6 +11,7 @@ import SwiftUI
 
 struct DropView: View, DropDelegate {
     @State private var targetAcquired = false
+    @State private var droppedURL: URL? = nil
 
     var body: some View {
         ZStack {
@@ -34,6 +35,7 @@ struct DropView: View, DropDelegate {
         itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
             guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
             self.targetAcquired = url.pathExtension == "csv"
+            self.droppedURL = url
         }
 
         return true
@@ -47,13 +49,11 @@ struct DropView: View, DropDelegate {
         return DropProposal(operation: self.targetAcquired ? .copy : .cancel)
     }
 
+    /// If we got here, we have a good URL, otherwise dropUpdated would have
+    /// cancelled the drop
     func performDrop(info: DropInfo) -> Bool {
-        guard let itemProvider = info.itemProviders(for: [kUTTypeFileURL as String]).first else { return false }
-
-        itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
-            guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
-            Face().convertAppleCardToOFX(url)
-        }
+        guard let url = droppedURL else { return false }
+        Face().convertAppleCardToOFX(url)
 
         return true
     }
