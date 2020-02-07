@@ -42,7 +42,7 @@ struct DropView: View, DropDelegate {
     }
 
     func dropExited(info: DropInfo) {
-        self.targetAcquired = false
+        resetState()
     }
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
@@ -54,8 +54,13 @@ struct DropView: View, DropDelegate {
     func performDrop(info: DropInfo) -> Bool {
         guard let url = droppedURL else { return false }
         Face().convertAppleCardToOFX(url)
-
+        resetState()
         return true
+    }
+    
+    private func resetState() {
+        self.droppedURL = nil
+        self.targetAcquired = false
     }
 }
 
