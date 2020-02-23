@@ -32,7 +32,7 @@ public class Face {
         let transactions = importAppleCardTransactions(from: inputURL)
         exportCSV(transactions, to: outputURL)
 
-NSFileCoordinator.removeFilePresenter(filePresenter)
+        NSFileCoordinator.removeFilePresenter(filePresenter)
         coordinator = nil
     }
 

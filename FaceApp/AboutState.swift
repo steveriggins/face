@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public class AboutState: ObservableObject {    
+public class AboutState: ObservableObject {
     @Published public var isAboutBoxShowing = false
     @Published public var isEasterEggEnabled = false
 }

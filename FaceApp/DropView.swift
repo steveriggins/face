@@ -31,7 +31,7 @@ struct DropView: View, DropDelegate {
         guard let itemProvider = info.itemProviders(for: [kUTTypeFileURL as String]).first else { return false }
 
         targetAcquired = false
-        
+
         itemProvider.loadItem(forTypeIdentifier: kUTTypeFileURL as String, options: nil) { item, _ in
             guard let data = item as? Data, let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
             self.targetAcquired = url.pathExtension == "csv"
@@ -46,7 +46,7 @@ struct DropView: View, DropDelegate {
     }
 
     func dropUpdated(info: DropInfo) -> DropProposal? {
-        return DropProposal(operation: self.targetAcquired ? .copy : .cancel)
+        return DropProposal(operation: targetAcquired ? .copy : .cancel)
     }
 
     /// If we got here, we have a good URL, otherwise dropUpdated would have
@@ -57,10 +57,10 @@ struct DropView: View, DropDelegate {
         resetState()
         return true
     }
-    
+
     private func resetState() {
-        self.droppedURL = nil
-        self.targetAcquired = false
+        droppedURL = nil
+        targetAcquired = false
     }
 }
 

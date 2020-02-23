@@ -16,6 +16,4 @@ class FilePresenter: NSObject, NSFilePresenter {
     var presentedItemOperationQueue: OperationQueue {
         OperationQueue.main
     }
-    
- 
 }

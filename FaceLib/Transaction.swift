@@ -17,13 +17,12 @@ enum TransactionType {
 
 struct Transaction {
     let type: TransactionType
-    let datePosted: String   /// XML Format 20200101000000.000
+    let datePosted: String /// XML Format 20200101000000.000
     let description: String
     let amount: String
     let payee: String
     let category: String
-    
-    
+
     /// Apple exports weird data
     /// A positive amount is a purchase
     /// A negative amount is a payment
@@ -42,5 +41,4 @@ struct Transaction {
         }
         self.category = csv.category
     }
-
 }

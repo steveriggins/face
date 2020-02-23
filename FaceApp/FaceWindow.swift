@@ -17,7 +17,7 @@ class FaceWindow: NSWindow {
             super.keyDown(with: event)
         }
     }
-    
+
     public override func flagsChanged(with event: NSEvent) {
         guard let delly = NSApplication.shared.delegate as? AppDelegate else {
             super.flagsChanged(with: event)

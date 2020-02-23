@@ -28,13 +28,13 @@ struct AppleCardCSVWireModel: Codable {
         self.type = try row.decode(String.self)
         self.amount = try row.decode(String.self)
     }
-    
+
     init(transaction: Transaction) {
         self.date = transaction.datePosted
         self.description = transaction.description
         self.merchant = transaction.payee
         self.category = transaction.category
-        switch (transaction.type) {
+        switch transaction.type {
         case .payment:
             self.type = "DEBIT"
         case .purchase:
@@ -52,4 +52,3 @@ struct AppleCardCSVWireModel: Codable {
         try row.encode(self.amount)
     }
 }
-

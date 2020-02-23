@@ -6,8 +6,8 @@
 //  Copyright © 2020 Steven W. Riggins. All rights reserved.
 //
 
-import Foundation
 import FaceLib
+import Foundation
 
 if CommandLine.arguments.count != 2 {
     print("Needs a path")
